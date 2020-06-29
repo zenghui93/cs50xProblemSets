@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+
+<p class="lead">
+  {{message}}
+</p>
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{tot_value}}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            {%for row in rows %}
+                <tr>
+                    <td>{{row["symbol"]}}</td>
+                    <td>{{row["name"]}} </td>
+                    <td>{{row["shares"]}}</td>
+                    <td>{{"$%.2f"|format(row["current_price"])}}</td>
+                    <td>{{"$%.2f"|format(row["total"])}}</td>
+                </tr>
+            {%endfor %}
+            <tr>
+                <td align="justify" colspan="4">CASH</td>
+                <td>{{ "$%.2f"|format(cash)}}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

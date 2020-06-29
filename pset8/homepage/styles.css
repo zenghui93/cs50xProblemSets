@@ -1,0 +1,15 @@
+.example {
+  background-color: yellow;
+}
+p {
+  background-color: green;
+}
+#example {
+  color: green;
+}
+p:active, h2:active, a:active{
+  background-color: pink;
+}
+a[target=_blank] {
+  background-color: yellow;
+}

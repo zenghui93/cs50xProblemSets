@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    <ul class="list-group">
+        <li class="list-group-item">Company Name: {{quoted['name']}}</li>
+        <li class="list-group-item">Price: {{quoted['price']}}</li>
+        <li class="list-group-item">Symbol: {{quoted['symbol']}}</li>
+    </ul>
+
+{% endblock %}
